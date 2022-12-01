@@ -1,0 +1,48 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-login-bg {
+  background-image: url('../assets/login-bg.png');
+}
+
+.theme-primary {
+  background: linear-gradient(90deg, #A238E6 0%, #DE3975 77.6%, #EA877D 100%);
+}
+
+.themed-text {
+  background: linear-gradient(90deg, #A238E6 0%, #DE3975 77.6%, #EA877D 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.theme-modal-black {
+  background: linear-gradient(180deg, #1E1E1E 0%, #100F0F 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
