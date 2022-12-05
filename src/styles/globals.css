@@ -19,10 +19,6 @@ a {
   box-sizing: border-box;
 }
 
-.bg-login-bg {
-  background-image: url('../assets/login-bg.png');
-}
-
 .theme-primary {
   background: linear-gradient(90deg, #A238E6 0%, #DE3975 77.6%, #EA877D 100%);
 }

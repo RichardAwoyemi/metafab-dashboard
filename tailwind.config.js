@@ -15,9 +15,6 @@ module.exports = {
           },
         ],
       },
-      backgroundImage: {
-        "login-bg": "url('../assets/login-bg.png')",
-      },
       colors: {
         "off-white": "#EEEFFB",
         "off-black": "#0B0B0B",

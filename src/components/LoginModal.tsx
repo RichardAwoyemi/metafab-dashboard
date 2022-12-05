@@ -25,8 +25,7 @@ export default function LoginModal() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          {/* TODO: Move bg loading to Next Image to optimise rendering times */}
-          <div className="fixed inset-0 bg-login-bg bg-cover transition-opacity" />
+          <div className="fixed inset-0 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 w-full z-10 overflow-y-auto">
