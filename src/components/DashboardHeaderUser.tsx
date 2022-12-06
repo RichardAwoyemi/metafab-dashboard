@@ -13,7 +13,7 @@ export default function DashboardHeaderUser(props: Props) {
         <Image src="/dummy-avatar.svg" alt="user-avatar" fill={true} />
       </div>
       <div className="text-xs">
-        <p className="text-white">{props.user}</p>
+        <p className="text-white font-semibold">{/* username */ 'Valhalla'}</p>
         <p className="text-white/50">{props.email}</p>
       </div>
     </div>
