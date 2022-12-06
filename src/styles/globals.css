@@ -33,6 +33,10 @@ a {
   background: linear-gradient(180deg, #1E1E1E 0%, #100F0F 100%);
 }
 
+.dashboard-header-gradient {
+  background: linear-gradient(180deg, #000000 0%, rgba(11, 11, 11, 0) 100%);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

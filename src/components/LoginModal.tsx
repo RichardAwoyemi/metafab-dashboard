@@ -45,7 +45,7 @@ export default function LoginModal() {
             >
               <div className="bg-gradient-to-b from-modal-black-top to-modal-black-bottom relative transform overflow-hidden rounded-[25px] bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md 2xl:max-w-[27.5vw]">
                 <div className="bg-off-black py-5 px-4 sm:px-12 flex gap-x-3 border-b border-bd-grey">
-                  <LogoPrimary />
+                  <LogoPrimary paddingTop={0} />
                 </div>
                 {/* TODO: Move from border to a padding + bg to catch the rounded edges */}
                 <div className="p-6 pb-8 sm:px-12 border-r border-b border-l border-off-black">
