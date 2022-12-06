@@ -1,5 +1,10 @@
+import { Dispatch, SetStateAction } from "react";
 
-export default function FormInputEmail() {
+interface Props {
+  handleChange: Dispatch<SetStateAction<string>>;
+}
+
+export default function FormInputEmail(props: Props) {
   return (
     <div className="text-xs">
       <label htmlFor="email" className="flex font-medium text-off-white">
@@ -12,8 +17,9 @@ export default function FormInputEmail() {
           id="email"
           className="block bg-[#0B0B0B] text-white/50 border border-bd-grey w-full rounded-md shadow-sm text-xs"
           placeholder="Enter Email Address"
+          onChange={(event) => props.handleChange(event.target.value)}
         />
       </div>
     </div>
-  )
+  );
 }

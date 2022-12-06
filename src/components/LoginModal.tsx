@@ -6,16 +6,20 @@ import { ButtonSecondary } from "./ButtonSecondary";
 import FormInputPassword from "./FormInputPassword";
 import Image from "next/image";
 import { LogoPrimary } from "./LogoPrimary";
+import { login } from "@/features/login/UserLoginSlice";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 export default function LoginModal() {
-  const [open, setOpen] = useState(true);
-  const closeModal = () => {
-    setOpen(false);
-  };
+  const dispatch = useAppDispatch();
+
+  const [email, setEmail] = useState("");
+  function handleSubmit() {
+    dispatch(login(email));
+  }
 
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+    <Transition.Root show={true} as={Fragment}>
+      <div className="relative z-10">
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -39,7 +43,7 @@ export default function LoginModal() {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="bg-gradient-to-b from-modal-black-top to-modal-black-bottom relative transform overflow-hidden rounded-[25px] bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md 2xl:max-w-[27.5vw]">
+              <div className="bg-gradient-to-b from-modal-black-top to-modal-black-bottom relative transform overflow-hidden rounded-[25px] bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md 2xl:max-w-[27.5vw]">
                 <div className="bg-off-black py-5 px-4 sm:px-12 flex gap-x-3 border-b border-bd-grey">
                   <LogoPrimary />
                 </div>
@@ -47,26 +51,27 @@ export default function LoginModal() {
                 <div className="p-6 pb-8 sm:px-12 border-r border-b border-l border-off-black">
                   <div>
                     <div className="text-center gap-y-6 flex flex-col">
-                      <Dialog.Title
-                        as="h3"
-                        className="py-4 flex text-3xl font-medium leading-6 text-white"
-                      >
+                      <h3 className="py-4 flex text-3xl font-medium leading-6 text-white">
                         Sign in to your account
-                      </Dialog.Title>
-                      <FormInputEmail />
+                      </h3>
+                      <FormInputEmail handleChange={setEmail} />
                       <FormInputPassword />
                     </div>
                   </div>
                   <div className="mt-5 sm:mt-6 flex flex-col gap-y-3">
-                    <ButtonPrimary text="Sign In" triggeredEvent={closeModal} />
+                    <ButtonPrimary
+                      disabled={!email}
+                      text="Sign In"
+                      triggeredEvent={handleSubmit}
+                    />
                     <ButtonSecondary text="Don’t have an account? Sign up." />
                   </div>
                 </div>
-              </Dialog.Panel>
+              </div>
             </Transition.Child>
           </div>
         </div>
-      </Dialog>
+      </div>
     </Transition.Root>
   );
 }
